@@ -1,0 +1,63 @@
+* {
+  box-sizing: border-box;
+}
+html,
+body,
+#app {
+  height: 100%;
+  width: 100%;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  color: $dark-grey;
+  font-family: 'Quicksand', sans-serif;
+  font-size: $m-size;
+  line-height: 1.6;
+  background: $c-site_background;
+  color: $c-light_font;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+a {
+  color: $c-light_link;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+.App {
+  position: relative;
+  display: flex;
+  flex-flow: column;
+  width: 100%;
+}
+header {
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  width: 100%;
+  height: 10vh;
+  padding: 0 $gutter;
+}
+header a {
+    margin-right: 18px;
+    text-decoration: none;
+}
+.animated-page-wrapper {
+    position: absolute;
+    top: 10vh;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.page {
+    width: 100%;
+    > .text_wrapper {
+      margin: 0 $gutter;
+    }
+}

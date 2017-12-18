@@ -1,0 +1,54 @@
+// Colors
+$dark-grey: #333;
+$grey: #666;
+$blue: #1c88bf;
+$dark-blue: #364051;
+$off-white: #f7f7f7;
+
+$winter-burgundy: #852c5a;
+$winter-pink: #faeaf2;
+$winter-mauve: #aa9cbc;
+$winter-plum: #6c4785;
+$winter-olive: #a6a9a6;
+$winter-deepblue: #282b5e;
+$winter-blue: #1958bc;
+$winter-babyblue: rgba(65,152,210,1);
+$winter-alphablue: rgba(65,152,210,.2);
+$winter-icyblue: #3492cf;
+$winter-green: #20575f;
+
+$c-site_background: $winter-deepblue;
+$c-light_font: $winter-babyblue;
+$c-light_link: $winter-icyblue;
+$c-dark_font: $winter-green;
+$c-dark_link: $winter-plum;
+$c-highlight: $winter-mauve;
+$c-stripe-color: $winter-mauve;
+$c-stripe-body-color: $winter-alphablue;
+
+
+@include breakpoint(medium) {
+
+}
+
+$autumn-blue: rgb(48,100,143);
+$autumn-teal: rgb(108,190,190);
+$autumn-mauve: rgb(149,122,165);
+$autumn-olive: rgb(102,107,80);
+$autumn-green: rgb(57,107,33);
+$autumn-red: rgb(165, 85, 48);
+$autumn-orange: rgb(165, 85, 48);
+$autumn-yellow: rgb(165, 85, 48);
+$autumn-cream: rgb(165, 85, 48);
+$autumn-pink: rgb(165, 85, 48);
+
+// Font Size
+$font-size-large: 1.8rem;
+$font-size-small: 1.4rem;
+
+// Spacing
+$s-size: 1.2rem;
+$m-size: 1.6rem;
+$l-size: 3.2rem;
+$xl-size: 4.8rem;
+$desktop-breakpoint: 45rem;

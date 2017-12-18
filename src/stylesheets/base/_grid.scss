@@ -1,0 +1,25 @@
+$col_count: 12;
+$gutter: 2%;
+$col_size: (100% - (($col_count + 1) * $gutter)) / $col_count;
+
+.grid-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  pointer-events: none;
+  @for $i from 1 through 12 {
+    .column:nth-of-type(n + #{$i}) {
+        margin-left: $gutter + (($gutter + $col_size) * ($i - 1));
+    }
+  }
+  .column {
+    position: absolute;
+    margin-left: $gutter;
+    width: $col_size;
+    height: 100vh;
+    opacity: .2;
+    background: $c-highlight;
+  }
+}
