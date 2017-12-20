@@ -6,7 +6,7 @@ import { ResponsiveImage, ResponsiveImageSize } from 'react-responsive-image';
 class Tile extends React.Component {
   constructor(props) {
     super(props);
-    // add Props for class names added in TilesWrapper; CSS will do most of the heavy lifting here
+    // add Props for class names added in tiles_wrapper; CSS will do most of the heavy lifting here
     if (props.tileClass) {
       this.classNames="tile "+props.tileClass;
     } else {

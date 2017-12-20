@@ -1,0 +1,131 @@
+// Colors
+$dark-grey: #333;
+$grey: #666;
+$blue: #1c88bf;
+$dark-blue: #364051;
+$off-white: #eee;
+
+$blazers-red: #d0112b;
+
+$winter-deepblue: #282b5e;
+$winter-alphablue: rgba(65,152,210,.2);
+$winter-icyblue: #3492cf;
+$winter-olive: #a6a9a6;
+$winter-green: #20575f;
+$autumn-mauve: rgb(149,122,165);
+
+
+
+$winter-burgundy: #852c5a;
+$winter-pink: #faeaf2;
+$winter-mauve: #aa9cbc;
+$winter-plum: #6c4785;
+$winter-blue: #1958bc;
+$winter-babyblue: rgba(65,152,210,1);
+
+$autumn-blue: rgb(48,100,143);
+$autumn-teal: rgb(108,190,190);
+$autumn-olive: rgb(102,107,80);
+$autumn-green: rgb(57,107,33);
+$autumn-red: rgb(165, 85, 48);
+$autumn-orange: rgb(165, 85, 48);
+$autumn-yellow: rgb(165, 85, 48);
+$autumn-cream: rgb(165, 85, 48);
+$autumn-pink: rgb(165, 85, 48);
+
+
+%cw_bgcolor_main {
+  background-blend-mode: lighten;
+  background-color: $winter-deepblue;
+  &.cw-blazers, .cw-blazers & { background-color: black; background-blend-mode: luminosity; }
+  &.cw-light, .cw-light & { background-color: #BEB8A7; background-blend-mode: normal; }
+}
+
+%cw_main_font_color {
+  color: $winter-alphablue;
+  &.cw-blazers, .cw-blazers & { color: $off-white; }
+  &.cw-light, .cw-light &  { color: black; }
+}
+
+%cw_link_color {
+  transition: color 320ms;
+  color: $winter-icyblue;
+  .cw-blazers & { color: $blazers-red; }
+  .cw-light &  { color: $winter-green; }
+}
+
+%cw_tile_box {
+  border: 1.90vw solid $winter-alphablue;
+  .cw-blazers & { border-color: $blazers-red; }
+  .cw-light & { border-color: $winter-green; }
+}
+
+%cw_stripe_color_one {
+  border: 1.90vw solid $winter-alphablue;
+  .cw-blazers & { border-color: $blazers-red; }
+  .cw-light & { border-color: $winter-green; }
+}
+
+%cw_stripe_color_two {
+  &:before {
+    background-image:
+    linear-gradient(
+      354deg,
+      transparent,
+      transparent 25%,
+      $winter-alphablue 25%,
+      $winter-alphablue 51%,
+      $winter-mauve 51%,
+      $winter-mauve 77%,
+      transparent 77%
+    );
+  }
+  .cw-blazers & {
+    &:before {
+      background-image:
+      linear-gradient(
+        354deg,
+        transparent,
+        transparent 25%,
+        white 25%,
+        white 51%,
+        $blazers-red 51%,
+        $blazers-red 77%,
+        transparent 77%
+      );
+    }
+  }
+  .cw-light & {
+    &:before {
+      background-image:
+      linear-gradient(
+        354deg,
+        transparent,
+        transparent 25%,
+        white 25%,
+        white 51%,
+        $blazers-red 51%,
+        $blazers-red 77%,
+        transparent 77%
+      );
+    }
+  }
+}
+
+%cw_tile_hover {
+  color: white;
+  text-shadow:
+   -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+     1px 1px 0 #000;
+}
+
+$c-site_background: $winter-deepblue;
+$c-light_font: $winter-alphablue;
+$c-light_link: $winter-icyblue;
+$c-dark_font: $winter-green;
+$c-dark_link: $winter-plum;
+$c-highlight: $winter-mauve;
+$c-stripe-color: $winter-mauve;
+$c-stripe-body-color: $winter-alphablue;

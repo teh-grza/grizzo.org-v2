@@ -1,7 +1,10 @@
 @import "base/mixins.scss";
 @import "base/variables.scss";
+@import "base/colorway.scss";
 @import "base/grid.scss";
 @import "base/base.scss";
+@import "base/header.scss";
+@import "base/footer.scss";
 
-@import "components/tilesWrapper.scss";
+@import "components/tiles_wrapper.scss";
 @import "components/tile.scss";

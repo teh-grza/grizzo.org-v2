@@ -1,3 +1,9 @@
+%nav-item {
+  padding: .5em 1em;
+  display: inline-block;
+  text-decoration: none;
+}
+
 @mixin transition($what: all, $time: 0.2s, $how: ease-in-out) {
   -webkit-transition: $what $time $how;
   -moz-transition:    $what $time $how;
@@ -7,8 +13,24 @@
 }
 
 @mixin breakpoint($point) {
+
+  @if $point == under_min_height {
+    @media (max-height: 75vw) and (max-width: 900px) { @content ;}
+  }
+  @if $point == under_good_height {
+    @media (max-height: 90vw) { @content ;}
+  }
+  @if $point == small {
+    @media (min-width: 500px)  { @content ; }
+  }
+  @if $point == small_down {
+    @media (max-width: 500px)  { @content ; }
+  }
   @if $point == medium {
     @media (min-width: 500px)  { @content ; }
+  }
+  @if $point == medium_down {
+    @media (max-width: 900px)  { @content ; }
   }
   @else if $point == large {
     @media (min-width: 900px)  { @content ; }

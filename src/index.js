@@ -1,13 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter } from "react-router-dom";
-import Nav from "./Nav";
+import App from "./App";
 import registerServiceWorker from "./registerServiceWorker";
 import "./stylesheets/main.scss";
 
 ReactDOM.render(
  <BrowserRouter>
-   <Nav />
+   <App />
  </BrowserRouter>,
  document.getElementById("app")
 );

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Route, Link } from "react-router-dom";
-import GridOverlay from "./components/GridOverlay";
 import Home from "./pages/HomePage";
+import Footer from "./components/Footer";
 import Professional from "./pages/ProfessionalPage";
 import TransitionGroup from "react-transition-group/TransitionGroup";
 
@@ -13,11 +13,13 @@ const firstChild = props => {
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="TopBar">
-          <Link to="/">Home</Link>
-          <Link to="/professional">Professional</Link>
-          <GridOverlay />
+      <div className="pageWrapper">
+        <header>
+          <h1>grizzo industries</h1>
+          <nav>
+            <Link to="/">home</Link>
+            <Link to="/professional">professional</Link>
+          </nav>
         </header>
         <Route
           exact
@@ -34,6 +36,7 @@ class App extends Component {
                {match && <Professional {...rest} />}
              </TransitionGroup>
           )}/>
+        <Footer />
       </div>
     );
   }

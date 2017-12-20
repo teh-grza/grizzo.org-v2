@@ -13,16 +13,16 @@ class TilesWrapper extends React.Component {
             transitionEnter={true}
             transitionEnterTimeout={100}
             transitionLeave={false}>
-        <section className="tilesWrapper">
-          <Tile title="professional interests" link="/professional" />
+        <section className="tiles_wrapper">
+          <Tile tileClass="spinner" title="professional interests" link="/professional" />
           <Tile tileClass="space" />
           <Tile tileClass="space boxed" />
-          <Tile tileClass="corner_color" title="personal interests" link="/professional" />
-          <Tile tileClass="boxed" />
           <Tile tileClass="space" />
-          <Tile tileClass="space"  />
-          <Tile title="about me" link="/professional" />
-          <Tile title="contact / sitemap" link="/professional" />
+          <Tile tileClass="boxed corner_color"  title="personal interests" link="/professional"  />
+          <Tile tileClass="space" />
+          <Tile tileClass="space boxed" />
+          <Tile tileClass="space" />
+          <Tile tileClass="coffee" title="about me" link="/professional" />
         </section>
       </CSSTransitionGroup>
     );

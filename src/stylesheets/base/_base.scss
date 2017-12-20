@@ -11,49 +11,42 @@ html {
   font-size: 62.5%;
 }
 body {
-  color: $dark-grey;
+  @extend %cw_main_font_color;
+  @extend %cw_bgcolor_main;
   font-family: 'Quicksand', sans-serif;
   font-size: $m-size;
   line-height: 1.6;
-  background: $c-site_background;
+  transition: background-color 360ms linear;
   color: $c-light_font;
   margin: 0;
-  padding: 0;
   overflow-x: hidden;
 }
 a {
-  color: $c-light_link;
+  @extend %cw_link_color;
   text-decoration: none;
   &:hover {
     text-decoration: underline;
   }
 }
-.App {
+
+.pageWrapper {
   position: relative;
+  top: 0;
   display: flex;
   flex-flow: column;
+  align-content: stretch;
   width: 100%;
+  padding-top: 10vh;
+  @include breakpoint(under_min_height) {
+    padding: 7.5rem 0 0;
+  }
 }
-header {
-  top: 0;
-  left: 0;
-  display: flex;
-  flex-flow: row nowrap;
-  align-items: center;
-  width: 100%;
-  height: 10vh;
-  padding: 0 $gutter;
-}
-header a {
-    margin-right: 18px;
-    text-decoration: none;
-}
+
 .animated-page-wrapper {
     position: absolute;
-    top: 10vh;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 80vh;
 }
 .page {
     width: 100%;

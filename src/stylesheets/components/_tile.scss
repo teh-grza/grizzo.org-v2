@@ -1,0 +1,144 @@
+
+.tile {
+  flex: 0 1 auto;
+  width: 100%;
+  min-width: 100%;
+  padding: $gutter;
+  padding: $col_size $gutter;
+  transition: opacity .5s ease-in;
+  opacity: 1;
+  text-align: center;
+  line-height: 1.3;
+  min-height: 6rem;
+
+  @include breakpoint(medium) {
+    font-size: $l-size;
+    width: $col_size * 6 + $gutter * 5;
+    min-width: $col_size * 6 + $gutter * 5;
+    margin-bottom: 2vh;
+    margin-left: $gutter;
+    padding: 0;
+    height: 31.3%
+  }
+
+  @include breakpoint(medium_down) {
+    &:nth-child(6),
+    &:nth-child(8),
+    &:nth-child(4) {
+      display: none;
+    }
+    &:nth-child(7) {
+      border: none!important;
+      order: 9;
+    }
+  }
+  @include breakpoint(large) {
+    width: $col_size * 4 + $gutter * 3;
+    min-width: $col_size * 4 + $gutter * 3;
+    &:nth-last-child(-n+3) {
+      margin-bottom: 0;
+    }
+  }
+
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    padding: 0 15%;
+    position: relative
+  }
+
+}
+
+/*
+ *
+ * misc tile designs used in tiles_wrapper.js
+ *
+ */
+.tile.corner_color {
+  position:relative;
+  @extend %cw_stripe_color_two;
+  &:before {
+    opacity: 0;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -100;
+  }
+  a:hover {
+    text-decoration: none;
+    @extend %cw_tile_hover;
+  }
+  &:hover:before {
+    transition: opacity .5s ease-in;
+    opacity: .9;
+  }
+}
+
+.tile.coffee {
+  position: relative;
+  &:before {
+    opacity: 0;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -100;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    @extend %cw_bgcolor_main;
+    background-image: url('/images/coffee.jpg');
+    background-blend-mode: luminosity;
+  }
+  a:hover {
+    text-decoration: none;
+    @extend %cw_tile_hover;
+  }
+  &:hover:before {
+    transition: opacity .7s ease-in;
+    opacity: 1;
+  }
+}
+
+.tile.spinner {
+  position:relative;
+  a:hover {
+    color: #fff;
+    @extend %cw_stripe_color_two;
+    background: url('/images/wedge_loader.svg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 71%;
+    text-decoration: none;
+    @extend %cw_tile_hover;
+  }
+}
+
+.boxed {
+  @extend %cw_tile_box;
+}
+.linkbox {
+  @extend %cw_tile_box;
+}
+
+.tile.space {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  @extend %cw_bgcolor_main;
+  background-image: url(/images/hubble_620.png);
+  @include breakpoint(large) {
+    background-image: url(/images/hubble_1400.png);
+  }
+}
