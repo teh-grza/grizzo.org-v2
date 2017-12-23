@@ -10,6 +10,7 @@ $blazers-red: #d0112b;
 $winter-deepblue: #282b5e;
 $winter-alphablue: rgba(65,152,210,.2);
 $winter-icyblue: #3492cf;
+$winter-burgundy: #852c5a;
 $winter-olive: #a6a9a6;
 $winter-green: #20575f;
 $autumn-mauve: rgb(149,122,165);
@@ -42,7 +43,8 @@ $autumn-pink: rgb(165, 85, 48);
 }
 
 %cw_main_font_color {
-  color: $winter-alphablue;
+  transition: color 320ms;
+  color: $winter-icyblue;
   &.cw-blazers, .cw-blazers & { color: $off-white; }
   &.cw-light, .cw-light &  { color: black; }
 }
@@ -119,6 +121,30 @@ $autumn-pink: rgb(165, 85, 48);
     1px -1px 0 #000,
     -1px 1px 0 #000,
      1px 1px 0 #000;
+}
+
+%cw_text_outline {
+  text-shadow:
+   -1px -1px 0 black,
+    1px -1px 0 black,
+    -1px 1px 0 black,
+     1px 1px 0 black;
+  .cw-blazers & {
+    color: white;
+     text-shadow:
+    -1px -1px 0 $blazers-red,
+     1px -1px 0 $blazers-red,
+     -1px 1px 0 $blazers-red,
+      1px 1px 0 $blazers-red;
+  }
+   .cw-light & {
+     color: black;
+     text-shadow:
+    -1px -1px 0 white,
+     1px -1px 0 white,
+     -1px 1px 0 white,
+      1px 1px 0 white;
+  }
 }
 
 $c-site_background: $winter-deepblue;
