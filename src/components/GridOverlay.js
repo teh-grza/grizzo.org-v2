@@ -7,14 +7,14 @@ class GridOverlay extends Component {
     super();
     this.state = {
       show: false,
-      title: "grid"
+      title: "Grid"
     };
   }
 
   handleClick(e) {
     e.preventDefault();
     // adjusts to "No grid" when the grid is showing
-    let new_title = this.state.show ? "grid" : "no grid";
+    let new_title = this.state.show ? "Grid" : "Grid Off";
     this.setState({
       show: !this.state.show,
       title: new_title

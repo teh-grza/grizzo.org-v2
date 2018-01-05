@@ -5,6 +5,9 @@ $blue: #1c88bf;
 $dark-blue: #364051;
 $off-white: #eee;
 
+$subtle-overlay: rgba(255,255,255,.1);
+$bright-overlay: rgba(255,255,255,.8);
+
 $blazers-red: #d0112b;
 
 $winter-deepblue: #282b5e;
@@ -14,8 +17,6 @@ $winter-burgundy: #852c5a;
 $winter-olive: #a6a9a6;
 $winter-green: #20575f;
 $autumn-mauve: rgb(149,122,165);
-
-
 
 $winter-burgundy: #852c5a;
 $winter-pink: #faeaf2;
@@ -62,10 +63,22 @@ $autumn-pink: rgb(165, 85, 48);
   .cw-light & { border-color: $winter-green; }
 }
 
+%cw_thick_lower_border {
+  border-bottom: $gutter/3 solid $winter-icyblue;
+  .cw-blazers & { border-color: $blazers-red; }
+  .cw-light &  { border-color: $winter-green; }
+}
+
 %cw_stripe_color_one {
   border: 1.90vw solid $winter-alphablue;
   .cw-blazers & { border-color: $blazers-red; }
   .cw-light & { border-color: $winter-green; }
+}
+
+a:hover svg {
+  fill: white;
+  .cw-blazers & { fill: $blazers-red; }
+  .cw-light & { fill: $winter-green; }
 }
 
 %cw_stripe_color_two {

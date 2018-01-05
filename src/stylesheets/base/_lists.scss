@@ -1,0 +1,62 @@
+// description list / timeline
+
+dl:after {content:"";display:table;clear:both;}
+
+dl {
+    width:100%;
+}
+dt, dd {
+    display:inline-block;
+    padding: 0 0 1em;
+}
+dt {
+    width: $col_size*2 + $gutter*2;
+    margin-right: $col_size;
+    text-align:right;
+    font-weight:bold;
+    clear:both;
+    float:left;
+    @include breakpoint(large) {
+      width: $col_size;
+      margin-right: 0;
+    }
+}
+dd {
+    -webkit-margin-start: 0;
+    width: $col_size*8 + $gutter*7;
+    margin-left:$gutter;
+    clear:both;
+    @include breakpoint(small) {
+      width: $col_size*7 + $gutter*5;
+    }
+    @include breakpoint(medium) {
+      width: $col_size*6 + $gutter*5;
+    }
+
+    @include breakpoint(large) {
+      width: $col_size*4 + $gutter*3;
+    }
+}
+dd + dd {
+    float:right;
+    clear:both;
+}
+dd + dt {
+   clear:both;
+}
+dt + dt {
+    width: 100%;
+    float: none;
+    padding: 0 auto 0 0;
+}
+dt + dt + dd {
+    margin-top: -2em;
+}
+dt + dt + dd + dt {
+    margin-top: 2em;
+}
+
+@include breakpoint(large) {
+}
+@include breakpoint(larger) {
+}

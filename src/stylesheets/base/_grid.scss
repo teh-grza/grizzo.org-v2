@@ -20,6 +20,6 @@ $col_size: (100vw - (($col_count + 1) * $gutter)) / $col_count;
     width: $col_size;
     height: 100vh;
     opacity: .2;
-    background: $c-highlight;
+    background: rgba(255,255,255,.3);
   }
 }

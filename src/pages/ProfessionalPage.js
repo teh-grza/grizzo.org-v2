@@ -1,29 +1,59 @@
 import React, { Component } from "react";
-import AnimatedWrapper from "./../AnimatedWrapper";
+import PageHeader from "./../components/PageHeader";
+import ExperienceChart from "./../components/ExperienceChart";
+import IconGithub from "./../svg/IconGithub";
+import IconInstagram from "./../svg/IconInstagram";
+import IconLinkedin from "./../svg/IconLinkedin";
+
+
 class ProfessionalPage extends Component {
- render() {
-  return (
-   <div className="page">
-     <h1>professional interests</h1>
-     <section>
-      <div className="text_wrapper">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet nisl nulla. Nam vel lobortis enim. Vivamus consectetur metus eros, et vehicula orci euismod et. Sed auctor lorem non enim pretium accumsan convallis vel risus. Curabitur feugiat est et orci mattis, sit amet aliquet libero accumsan. Nulla sed ex eget eros accumsan congue euismod sit amet ipsum. Nulla sed magna quis neque luctus blandit. Aenean feugiat orci et tortor tempor scelerisque. Etiam iaculis odio nisl, inconsequat nisl gravida vel. Vestibulum volutpat quis est ut varius. Ut vel felis consequat, vehicula justo ac, rutrum nisl. Nulla et metus porttitor leo ultricies cursus.
-        </p>
-        <h2>Ut fringilla congue orci a porttitor.</h2>
-        <p>Donec risus leo, tincidunt nec lacinia vel, egestas id ligula. Quisque efficitur sem ac ex tincidunt fringilla. Sed ac accumsan nunc, eget placerat lectus. Vestibulum et interdum nisl, a ultrices sem. Duis nec tempus turpis. Fusce feugiat volutpat nisi vel faucibus. Integer laoreet nulla in justo dictum, quis molestie odio blandit. Aliquam sagittis enim quis facilisis tempor. Aliquam ac convallis lorem. Praesent rhoncus leo sit amet scelerisque imperdiet. Etiam mattis leo quis nunc pretium, eget fermentum arcu ullamcorper. Aliquam volutpat faucibus nisl nec pharetra. Fusce nec feugiat neque. Mauris tempus porttitor efficitur. Quisque in ipsum ut lorem tincidunt faucibus vel nec lacus.
-        </p>
+  render() {
+    return (
+      <div className="page professional_page">
+        <PageHeader title="Professional Interests" subtitle="Strictly Business" />
+        <h4>Full-stack web development</h4>
+        <section className="text_wrapper full-stack">
+          <p>I started building web pages for fun in 1995. I went pro in 2001, the same year as <a href="https://www.youtube.com/watch?v=ZS67ZPK5L2U">Gerald Wallace</a>.</p>
+          <dl>
+            <dt>2001</dt>
+            <dd>1st dev job: building .htm pages</dd>
+            <dt>2002</dt>
+            <dd>Freelance: static sites and Wordpress</dd>
+            <dt>2004</dt>
+            <dd>Hired by <a href="https://www.gravitatedesign.com/">Gravitate</a> as a Developer</dd>
+            <dt>2006</dt>
+            <dd>Shift to back-end focus: PHP, asp.net ecommerce builds</dd>
+            <dt>Late 2007</dt>
+            <dd>Hired by <a href="http://www.wearefine.com/">FINE</a> as a Developer focused on CakePHP + jQuery</dd>
+            <dt>2010</dt>
+            <dd>Shift focus to Ruby on Rails + SCSS + jQuery</dd>
+            <dt>2011</dt>
+            <dd>Promoted to Director of Interactive Technology at FINE</dd>
+            <dt>2012</dt>
+            <dd><a href="https://github.com/wearefine/fae">FAE</a> is born!</dd>
+            <dt>2015-ish</dt>
+            <dd>Shift focus to vanilla JS / frameworks</dd>
+            <dt>Early 2017</dt>
+            <dd>Shift focus to Vue.js</dd>
+            <dt>Late 2017</dt>
+            <dd>Shift focus to React DOM</dd>
+          </dl>
+
+          <section className="icon-links">
+            <IconGithub />
+            <IconInstagram />
+            <IconLinkedin />
+          </section>
+
+        </section>
+
+        <figure className="experience-skills">
+          <ExperienceChart />
+        </figure>
+
       </div>
-    </section>
-    <section>
-      <div className="text_wrapper">
-        <h2>Suspendisse potenti.</h2>
-        <p>Mauris eu pellentesque mi. Vestibulum felis lectus, hendrerit sed lectus ac, tempor malesuada metus. Aliquam non tristique ipsum. Nunc sed iaculis ligula. Praesent vulputate nisl nec bibendum gravida. In vitae turpis sit amet lectus interdum vulputate sit amet eu augue. Praesent sollicitudin, erat eu dictum molestie, ex enim sagittis erat, sed dapibus purus leo sit amet ex. Vivamus quis lacus sagittis, luctus ipsum suscipit, aliquet elit. Curabitur et ex at ipsum ullamcorper suscipit vel quis nisl. Donec consequat in dolor non gravida. Donec hendrerit pellentesque arcu, sed sagittis eros tempus congue. Ut eros erat, condimentum at orci elementum, congue fermentum augue. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent id quam et odio gravida elementum.
-        </p>
-      </div>
-    </section>
-  </div>
-  )
- }
+    )
+  }
 }
-const Professional = AnimatedWrapper(ProfessionalPage);
-export default Professional;
+
+export default ProfessionalPage;

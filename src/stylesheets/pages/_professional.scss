@@ -1,0 +1,24 @@
+.professional_page {
+  .full-stack {
+    @include breakpoint(large) {
+      padding-right: 0;
+      float: left;
+      width: 47vw;
+    }
+  }
+  .experience-skills {
+    padding: 2em 1em;
+    background: $subtle-overlay;
+    @include breakpoint(large) {
+      width: 47vw - ($col_size);
+      float: left;
+    }
+    @include breakpoint(larger) {
+      width: 47vw - ($col_size + $gutter);
+    }
+  }
+
+  .technical-management {
+    clear: both;
+  }
+}

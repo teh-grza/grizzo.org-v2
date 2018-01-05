@@ -35,4 +35,10 @@
   @else if $point == large {
     @media (min-width: 900px)  { @content ; }
   }
+  @else if $point == larger {
+    @media (min-width: 1200px)  { @content ; }
+  }
+  @else if $point == xlarge {
+    @media (min-width: 1600px)  { @content ; }
+  }
 }

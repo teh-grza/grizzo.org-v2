@@ -33,7 +33,7 @@ class ColorSwitch extends Component {
   render() {
     return (
       <div>
-          <button href="" onClick={ (e) => this.handleClick(e) }>Color Swap</button>
+          <a href="" onClick={ (e) => this.handleClick(e) }>Color Swap</a>
       </div>
     );
   }

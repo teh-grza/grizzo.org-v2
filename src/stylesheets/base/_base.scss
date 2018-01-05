@@ -1,15 +1,18 @@
 * {
   box-sizing: border-box;
 }
+
 html,
 body,
 #app {
   height: 100%;
   width: 100%;
 }
+
 html {
   font-size: 62.5%;
 }
+
 body {
   @extend %cw_main_font_color;
   @extend %cw_bgcolor_main;
@@ -20,6 +23,7 @@ body {
   margin: 0;
   overflow-x: hidden;
 }
+
 a {
   @extend %cw_link_color;
   text-decoration: none;
@@ -28,29 +32,134 @@ a {
   }
 }
 
-.pageWrapper {
+.page-wrapper {
   position: relative;
   top: 0;
   display: flex;
   flex-flow: column;
   align-content: stretch;
   width: 100%;
-  padding-top: 10vh;
+  padding: 10vh 0;
   @include breakpoint(under_min_height) {
     padding: 7.5rem 0 0;
   }
 }
 
-.animated-page-wrapper {
-    position: absolute;
-    left: 0;
-    width: 100%;
-    height: 80vh;
-}
 .page {
-    width: 100%;
-    > h1,
-    .text_wrapper {
-      margin: 0 $gutter;
+  width: 100%;
+
+  .text_wrapper {
+    margin: 0 $gutter;
+    @include breakpoint(medium) {
+      padding: 0 $col_size + $gutter;
     }
+    @include breakpoint(large) {
+      padding: 0 $col_size;
+    }
+    @include breakpoint(larger) {
+      padding: 0 $col_size + $gutter;
+    }
+  }
+}
+
+.icon-links {
+  text-align: center;
+  border-top: 1px solid rgba(255,255,255,.3);
+  padding-top: 1em;
+
+  a {
+    display: inline-block;
+  }
+  svg {
+    width: 3.6em;
+    height: 3.6em;
+    margin: 0 .6em;
+    fill: $bright-overlay;
+    transition: fill .4s ease;
+  }
+}
+
+h1 {
+  font-size: 2rem;
+  @include breakpoint(medium) {
+    font-size: 2.6rem;
+  }
+  @include breakpoint(large) {
+    font-size: 3.1rem;
+  }
+}
+
+h2 {
+  font-size: 2rem;
+  @include breakpoint(medium) {
+    font-size: 3rem;
+  }
+  @include breakpoint(large) {
+    font-size: 4rem;
+  }
+  @include breakpoint(xlarge) {
+    font-size: 5rem;
+  }
+}
+
+h3 {
+  font-size: 1.8rem;
+  @include breakpoint(large) {
+    font-size: 2.6rem;
+  }
+  @include breakpoint(xlarge) {
+    font-size: 3.2rem;
+  }
+}
+
+h4 {
+  font-size: 2rem;
+  .page & {
+    margin: 0 $gutter 1.2em;
+    clear: both;
+    @include breakpoint(medium) {
+      margin: 0 $gutter*2+$col_size 1.2em;
+    }
+    @include breakpoint(large) {
+      margin: 0 $gutter+$col_size 1.2em;
+    }
+    @include breakpoint(larger) {
+      margin: 0 $gutter*2+$col_size 1.2em;
+    }
+  }
+
+  padding-bottom: .2em;
+  @include breakpoint(medium) {
+    font-size: 2.5rem;
+    border-bottom: 1px solid rgba(255,255,255,.3);
+  }
+  @include breakpoint(xlarge) {
+    font-size: 3rem;
+  }
+}
+
+h5 {
+  font-size: 1.3rem;
+  @include breakpoint(medium) {
+    font-size: 2rem;
+  }
+  @include breakpoint(large) {
+    font-size: 2.4rem;
+  }
+  @include breakpoint(xlarge) {
+    font-size: 2.8rem;
+  }
+}
+
+p {
+  margin: 0 0 1.6em;
+}
+
+figure {
+  margin: 0;
+}
+
+.iFrame {
+  width: 960px;
+  margin: 0 auto;
 }

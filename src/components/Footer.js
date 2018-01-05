@@ -7,9 +7,10 @@ class Footer extends Component {
   return (
    <footer>
      <nav>
-       <Link to="/">home</Link>
-       <Link to="/professional">professional</Link>
-       
+       <Link to="/">Home</Link>
+       <Link to="/professional">Professional</Link>
+       <Link to="/personal">Personal</Link>
+
        <GridOverlay />
        <ColorSwitch />
      </nav>
