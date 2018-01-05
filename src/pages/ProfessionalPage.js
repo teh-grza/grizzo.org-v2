@@ -55,11 +55,11 @@ class ProfessionalPage extends Component {
             <dd><a href="https://github.com/wearefine/fae">FAE</a> is born</dd>
             <dt>2015-ish</dt>
             <dd>Shift focus to vanilla JS / frameworks</dd>
-            <dt>Early 2017</dt>
-            <dd>Shift focus to Vue.js</dd>
-            <dt>Late 2017</dt>
-            <dd>Shift focus to React</dd>
+            <dt>2017</dt>
+            <dd>Shift focus to Vue.js and React</dd>
           </dl>
+
+          <p>So I've been a web dev for a long time and have worn many hats.  These days, I'm most excited about Responsive Web Apps, service workers, VR & AR, and keeping up with the APIs.</p>
 
           <section className="icon-links">
             <IconGithub />
