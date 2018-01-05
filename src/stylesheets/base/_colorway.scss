@@ -39,7 +39,7 @@ $autumn-pink: rgb(165, 85, 48);
 %cw_bgcolor_main {
   background-blend-mode: lighten;
   background-color: $winter-deepblue;
-  &.cw-blazers, .cw-blazers & { background-color: black; background-blend-mode: luminosity; }
+  &.cw-blazers, .cw-blazers & { background-color: #010101; background-blend-mode: luminosity; }
   &.cw-light, .cw-light & { background-color: #BEB8A7; background-blend-mode: normal; }
 }
 

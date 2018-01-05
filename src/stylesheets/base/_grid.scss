@@ -1,6 +1,7 @@
 $col_count: 12;
 $gutter: 2vw;
 $col_size: (100vw - (($col_count + 1) * $gutter)) / $col_count;
+$col_pct: (100% - (($col_count + 1) * 2)) / $col_count;
 
 .grid-overlay {
   position: fixed;

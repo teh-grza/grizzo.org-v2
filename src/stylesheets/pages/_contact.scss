@@ -1,0 +1,46 @@
+.contact_page {
+
+    .page-header {
+      background-image: url(/images/kitty.png);
+      background-size: 13%;
+    }
+  .contact-icons {
+    background: rgba(255,255,255,.2);
+  }
+
+  dl {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    dt {
+      flex: 0 0 $col_size*2 + $gutter*2;
+      @include breakpoint(large) {
+        flex: 0 0 $col_size*2 + $gutter*2;
+      }
+      padding: 1em 0;
+      text-align: center;
+      justify-content: center;
+      margin: 0;
+    }
+    dd {
+      padding: .5em 1em .5em 0;
+      clear:both;
+      flex: $col_size*7 + $gutter*6 0 0;
+      @include breakpoint(small) {
+        flex: $col_size*6 + $gutter*5 0 0;
+      }
+      @include breakpoint(medium) {
+        flex: $col_size*7 + $gutter*6 0 0;
+      }
+    }
+    svg {
+      width: 100%;
+      max-width: 5em;
+      min-width: 3em;
+      height: 100%;
+      path {
+        fill: white;
+      }
+    }
+  }
+}

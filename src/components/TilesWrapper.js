@@ -14,7 +14,7 @@ class TilesWrapper extends React.Component {
           <Tile tileClass="space" />
           <Tile tileClass="space boxed" />
           <Tile tileClass="space" />
-          <Tile tileClass="coffee" title="about me" link="/professional" />
+          <Tile tileClass="coffee" title="contact me" link="/contact" />
         </section>
     );
   }

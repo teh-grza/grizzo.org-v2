@@ -15,13 +15,13 @@
     transition-delay: calc(.1s * #{$i});
   }
 }
-.tileTransition-appear .tile {
+.fade-appear .tile {
   opacity: 0;
 }
-.tileTransition-enter.tileTransition-enter-active .tile {
+.fade-enter.fade-enter-active .tile {
   opacity: 1;
 }
-.tileTransition-appear-active {
+.fade-appear-active {
   .tile {
     opacity: 1;
   }

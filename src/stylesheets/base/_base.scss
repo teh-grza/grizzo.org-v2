@@ -64,9 +64,15 @@ a {
 
 .icon-links {
   text-align: center;
-  border-top: 1px solid rgba(255,255,255,.3);
-  padding-top: 1em;
+  padding: 1.1em 0 1em;
+  background-color: rgba(255,255,255,.08);
 
+  @include breakpoint(large) {
+    width: $col_size*5 + $gutter*5;
+  }
+  @include breakpoint(larger) {
+    width: $col_size*5 + $gutter*4;
+  }
   a {
     display: inline-block;
   }
@@ -115,16 +121,18 @@ h3 {
 h4 {
   font-size: 2rem;
   .page & {
-    margin: 0 $gutter 1.2em;
+    margin-left: $gutter;
+    margin-bottom: 1.2em;
+    width: $gutter*9+$col_size*10;
     clear: both;
     @include breakpoint(medium) {
-      margin: 0 $gutter*2+$col_size 1.2em;
+      margin-left: $gutter+$col_size;
     }
     @include breakpoint(large) {
-      margin: 0 $gutter+$col_size 1.2em;
+      margin-left: $gutter+$col_size;
     }
     @include breakpoint(larger) {
-      margin: 0 $gutter*2+$col_size 1.2em;
+      margin-left: $gutter*2+$col_size;
     }
   }
 
@@ -152,6 +160,7 @@ h5 {
 }
 
 p {
+  max-width: 1100px;
   margin: 0 0 1.6em;
 }
 

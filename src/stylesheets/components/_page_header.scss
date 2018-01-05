@@ -12,8 +12,13 @@
   min-height: 6rem;
   max-height: 240px!important;
   position: relative;
-  background: rgba(255,255,255,.15);
-  
+
+  background-blend-mode: multiply;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 91%;
+  background-color: rgba(255,255,255,.15);
+
   @extend %cw_thick_lower_border;
 
   @include breakpoint(medium) {
@@ -22,7 +27,7 @@
   }
   @include breakpoint(large) {
     height: 31vw;
-    padding: $col_size $col_size;
+    padding: 0 $col_size;
     margin: 0 $gutter $gutter;
   }
 

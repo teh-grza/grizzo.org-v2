@@ -6,7 +6,6 @@
   height: 100%;
   padding: $gutter;
   padding: $col_size $gutter;
-  transition: opacity .5s ease-in;
   opacity: 1;
   text-align: center;
   align-items: center;
@@ -24,6 +23,7 @@
     margin-left: $gutter;
     padding: 0;
     height: 31.3%;
+    transition: opacity .5s ease-in;
   }
 
   @include breakpoint(medium_down) {
@@ -65,77 +65,3 @@
     background-image: url(/images/hubble_1400.png);
   }
 }
-
-/*
- *
- * misc tile designs used in tiles_wrapper.js
- *
- */
-
- /*
-.tile.corner_color {
-  position:relative;
-  @extend %cw_stripe_color_two;
-  &:before {
-    opacity: 0;
-    content: '';
-    display: block;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: -100;
-  }
-  a:hover {
-    text-decoration: none;
-    @extend %cw_tile_hover;
-  }
-  &:hover:before {
-    transition: opacity .5s ease-in;
-    opacity: .9;
-  }
-}
-.tile.coffee {
-  position: relative;
-  &:before {
-    opacity: 0;
-    content: '';
-    display: block;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: -100;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-    @extend %cw_bgcolor_main;
-    background-image: url('/images/coffee.jpg');
-    background-blend-mode: luminosity;
-  }
-  a:hover {
-    text-decoration: none;
-    @extend %cw_tile_hover;
-  }
-  &:hover:before {
-    transition: opacity .7s ease-in;
-    opacity: 1;
-  }
-}
-
-.tile.spinner {
-  position:relative;
-  a:hover {
-    color: #fff;
-    @extend %cw_stripe_color_two;
-    background: url('/images/wedge_loader.svg');
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: 71%;
-    text-decoration: none;
-    @extend %cw_tile_hover;
-  }
-}
-*/

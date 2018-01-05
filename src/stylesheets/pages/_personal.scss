@@ -1,0 +1,44 @@
+.personal_page {
+
+  .page-header {
+    background-image: url(/images/cane.png);
+    background-size: 11%;
+  }
+
+  .bandcamp-iframe {
+    margin: 0 auto 2em;
+    width: $col_size*8 + $gutter*7;
+    max-width: 700px;
+    min-width: 400px;
+    iframe {
+      width: 100%;
+      min-height: 406px;
+      height: 100%;
+      border: 0;
+    }
+  }
+  .icon-bandcamp {
+      svg {
+        fill: rgba(255,255,255,.6)!important;
+      }
+      &:hover path {
+        transition: fill .4s ease;
+        fill: white!important;
+      }
+      &:hover #diamond {
+        fill: #6399a8!important;
+      }
+      svg {
+        width: 7em;
+      }
+  }
+  .youtube-iframe {
+    margin: 0 auto;
+    max-width: 640px;
+    font-size: .9em;
+    iframe {
+      width: 640px;
+      height: 356px;
+    }
+  }
+}

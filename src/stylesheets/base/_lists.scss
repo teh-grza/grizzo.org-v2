@@ -33,9 +33,6 @@ dd {
       width: $col_size*6 + $gutter*5;
     }
 
-    @include breakpoint(large) {
-      width: $col_size*4 + $gutter*3;
-    }
 }
 dd + dd {
     float:right;
@@ -54,9 +51,4 @@ dt + dt + dd {
 }
 dt + dt + dd + dt {
     margin-top: 2em;
-}
-
-@include breakpoint(large) {
-}
-@include breakpoint(larger) {
 }

@@ -1,20 +1,47 @@
 .professional_page {
+
+  .page-header {
+    background-image: url(/images/umbrella.png);
+    background-size: 13%;
+  }
+
   .full-stack {
     @include breakpoint(large) {
+      margin-right: 0;
       padding-right: 0;
       float: left;
       width: 47vw;
     }
+    dd {
+      @include breakpoint(large) {
+        width: $col_size*4 + $gutter*3;
+      }
+    }
   }
+
+  .icon-links {
+    margin-bottom: 2em;
+  }
+
   .experience-skills {
     padding: 2em 1em;
     background: $subtle-overlay;
+    margin: 0 auto 2em;
+    width: $col_size * 12 + $gutter * 11;
+
+    @include breakpoint(medium) {
+      width: $col_pct*10 + 18%;
+    }
     @include breakpoint(large) {
-      width: 47vw - ($col_size);
       float: left;
+      margin-left: $gutter;
+      width: 47vw - ($col_size + $gutter*2);
     }
     @include breakpoint(larger) {
       width: 47vw - ($col_size + $gutter);
+    }
+    @include breakpoint(xlarge) {
+      width: $col_size*4 + $gutter*4
     }
   }
 
