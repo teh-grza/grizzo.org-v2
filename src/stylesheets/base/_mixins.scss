@@ -14,6 +14,9 @@
 
 @mixin breakpoint($point) {
 
+  @if $point == under_min_px_height {
+    @media (max-height: 600px) { @content ;}
+  }
   @if $point == under_min_height {
     @media (max-height: 75vw) and (max-width: 900px) { @content ;}
   }
@@ -24,7 +27,10 @@
     @media (min-width: 500px)  { @content ; }
   }
   @if $point == small_down {
-    @media (max-width: 500px)  { @content ; }
+    @media (max-width: 499px)  { @content ; }
+  }
+  @if $point == small_to_medium {
+    @media (min-width: 500px) and (max-width: 899px) { @content ;}
   }
   @if $point == medium {
     @media (min-width: 500px)  { @content ; }

@@ -40,6 +40,12 @@ a {
   align-content: stretch;
   width: 100%;
   padding: 10vh 0;
+  @include breakpoint (small_down) {
+    padding: 100px 0 70px;
+  }
+  @include breakpoint (under_min_px_height) {
+    padding: 100px 0 70px;
+  }
   @include breakpoint(under_min_height) {
     padding: 7.5rem 0 0;
   }

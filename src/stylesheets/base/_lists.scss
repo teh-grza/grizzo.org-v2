@@ -23,15 +23,10 @@ dt {
 }
 dd {
     -webkit-margin-start: 0;
-    width: $col_size*8 + $gutter*7;
-    margin-left:$gutter;
-    clear:both;
-    @include breakpoint(small) {
-      width: $col_size*7 + $gutter*5;
-    }
-    @include breakpoint(medium) {
-      width: $col_size*6 + $gutter*5;
-    }
+    width: auto;
+    float: left;
+    clear: right;
+    margin-left: $gutter;
 
 }
 dd + dd {

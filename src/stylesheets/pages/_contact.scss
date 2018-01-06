@@ -25,7 +25,7 @@
     dd {
       padding: .5em 1em .5em 0;
       clear:both;
-      flex: $col_size*7 + $gutter*6 0 0;
+      flex: $col_size*9 + $gutter*8 0 0;
       @include breakpoint(small) {
         flex: $col_size*6 + $gutter*5 0 0;
       }

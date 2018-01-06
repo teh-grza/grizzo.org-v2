@@ -14,16 +14,46 @@ header {
   display: flex;
   justify-content: space-between;
   z-index: 1;
-  @include breakpoint(under_min_height) {
-    height: 7.5rem;
+
+  a:hover {
+    @extend %cw_text_link_outline;
   }
+  h1 {
+    @include breakpoint(small_down) {
+      position: absolute;
+      top: $gutter;
+      left: $gutter;
+    }
+    a {
+      @extend %cw_logo_color;
+    }
+  }
+
 }
 
 header nav {
   margin-top: .74em;
   margin-right: -.7em;
-}
 
-header nav a {
-  @extend %nav-item;
+  @include breakpoint(small_down) {
+    position: absolute;
+    left: 0;
+    top: 3.3em;
+    margin: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  @include breakpoint (medium_down) {
+    a:first-child {
+      display: none;
+    }
+  }
+
+  a {
+    @extend %nav-item;
+    @include breakpoint(small_down) {
+      padding: .7em 2%;
+    }
+  }
 }

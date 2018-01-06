@@ -28,7 +28,7 @@ class ContactPage extends Component {
               <dt><IconYoutube /></dt>
               <dd>Youtube is where I put Blazers highlights videos</dd>
               <dt><IconTumblr /></dt>
-              <dd>And my Tumblr blog is a real snoozer these days</dd>
+              <dd>And my Tumblr blog is a real snoozer</dd>
             </dl>
           </div>
         </section>

@@ -36,7 +36,6 @@
   }
 
   @include breakpoint(under_min_height) {
-    background: blue;
     max-height: 33vh;
   }
   h2, h3 {

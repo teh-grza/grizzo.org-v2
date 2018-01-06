@@ -37,17 +37,25 @@ $autumn-pink: rgb(165, 85, 48);
 
 
 %cw_bgcolor_main {
+  background-color: black;
   background-blend-mode: lighten;
-  background-color: $winter-deepblue;
+  &.cw-main, .cw-main & { background-color: $winter-deepblue; }
   &.cw-blazers, .cw-blazers & { background-color: #010101; background-blend-mode: luminosity; }
   &.cw-light, .cw-light & { background-color: #BEB8A7; background-blend-mode: normal; }
 }
 
 %cw_main_font_color {
-  transition: color 320ms;
+  transition: all 320ms;
   color: $winter-icyblue;
   &.cw-blazers, .cw-blazers & { color: $off-white; }
   &.cw-light, .cw-light &  { color: black; }
+}
+
+%cw_logo_color {
+    transition: all 320ms;
+    color: $off-white;
+    &.cw-blazers, .cw-blazers & { color: $off-white; }
+    &.cw-light, .cw-light &  { color: black; }
 }
 
 %cw_link_color {
@@ -55,6 +63,21 @@ $autumn-pink: rgb(165, 85, 48);
   color: $winter-icyblue;
   .cw-blazers & { color: $blazers-red; }
   .cw-light &  { color: $winter-green; }
+}
+
+%cw_text_link_outline {
+  text-decoration: none;
+  color: white;
+    text-shadow: 1px 1px 1px #000,
+                -1px -1px 1px #000,
+                -1px 1px 1px #000,
+                1px -1px 1px #000;
+  .cw-blazers & {
+    text-shadow: 1px 1px 1px $blazers-red,
+                -1px -1px 1px $blazers-red,
+                -1px 1px 1px $blazers-red,
+                1px -1px 1px $blazers-red;
+  }
 }
 
 %cw_tile_box {
