@@ -3,18 +3,26 @@
 .fade-enter {
   position:absolute;
   opacity: 0;
+  height: 100vh;
+  overflow:hidden;
 }
 
 .fade-appear-active,
 .fade-enter-active {
   transition: opacity .3s linear;
   opacity: 1;
+  height: 100vh;
+  overflow:hidden;
 }
 .fade-exit {
   transition: opacity .2s linear;
   opacity: 1;
+  height: 100vh;
+  overflow:hidden;
 }
 
 .fade-exit-active {
   opacity: 0;
+  height: 100vh;
+  overflow:hidden;
 }
