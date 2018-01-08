@@ -1,10 +1,11 @@
-import React, { Component } from "react";
-import PageHeader from "./../components/PageHeader";
-import ExperienceChart from "./../components/ExperienceChart";
-import IconGithub from "./../svg/IconGithub";
-import IconTwitter from "./../svg/IconTwitter";
-import IconLinkedin from "./../svg/IconLinkedin";
-import IconTumblr from "./../svg/IconTumblr";
+import React, { Component } from "react"
+import { Link } from 'react-router-dom'
+import PageHeader from "./../components/PageHeader"
+import ExperienceChart from "./../components/ExperienceChart"
+import IconGithub from "./../svg/IconGithub"
+import IconTwitter from "./../svg/IconTwitter"
+import IconLinkedin from "./../svg/IconLinkedin"
+import IconTumblr from "./../svg/IconTumblr"
 
 class ProfessionalPage extends Component {
   render() {
@@ -25,11 +26,6 @@ class ProfessionalPage extends Component {
           <p>And not that anybody likes delivering bad news, but if somebody's got to do it, it should be me.  I can handle difficult conversations and defuse tense moments using charisma, logic or both.  This is a skill I was seemingly born with so I can't really take credit for it.</p>
 
           <p><a href="https://www.linkedin.com/in/mark-f-hoffmann/">LinkedIn</a> has more details of my experience as a technical director.</p>
-
-          <section className="icon-links">
-            <IconLinkedin />
-            <IconTwitter />
-          </section>
 
         </section>
 
@@ -61,11 +57,6 @@ class ProfessionalPage extends Component {
 
           <p>So I've been a web dev for a long time and have worn many hats.  These days, I'm most excited about Responsive Web Apps, service workers, VR & AR, and keeping up with the APIs.</p>
 
-          <section className="icon-links">
-            <IconGithub />
-            <IconLinkedin />
-            <IconTwitter />
-          </section>
 
         </section>
 
@@ -75,14 +66,15 @@ class ProfessionalPage extends Component {
 
         <h4>Game Development</h4>
         <section className="text_wrapper tech-management">
-          <p>I released a game in 1993 (a collaboration with my dad) and another in 2014 (an RPG in response to a dis track I received). I'm hoping to be more prolific moving forward-- hopeful enough that I formed an LLC and began working full-time on my first official release in November 2017.</p>
-          <p>Underground Software (the same name my dad and I used in 1993) does not yet have a solid web presence but I intend to produce one as soon as there's games to promote.  In the meantime, my defunct <a href="http://teh-grza.tumblr.com/">Tumblr</a> may have a new life someday but for now features some screenshots of my last game and a single reference (in 2015) to the one I'm working on now!</p>
+          <p>I released a game in 1992 (a collaboration with my dad) and another in 2014 (an RPG in response to a dis track I received). I'm hoping to be more prolific moving forward-- hopeful enough that I formed an LLC and began working full-time on my first official release in November 2017.</p>
+          <p>Underground Software (the same name my dad and I used in 1992) does not yet have a solid web presence but I intend to produce one as soon as there's games to promote.  In the meantime, my defunct <a href="http://teh-grza.tumblr.com/">Tumblr</a> may have a new life someday. Also the <Link to="/notFound">404 page</Link> of this site features a small Blackjack-focused RPG I wrote over a few days.</p>
 
-          <section className="icon-links">
-            <IconLinkedin />
-            <IconTumblr />
-          </section>
+        </section>
 
+        <section className="icon-links">
+          <IconLinkedin />
+          <IconGithub />
+          <IconTwitter />
         </section>
 
       </div>

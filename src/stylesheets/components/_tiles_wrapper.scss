@@ -1,17 +1,21 @@
 .tiles_wrapper {
   width: 100%;
   min-width: 100%;
-  height: 80vh;
+  height: calc(94vh - 160px);
+  min-height: 400px;
   display: flex;
   align-items: stretch;
   align-content: stretch;
   justify-content: flex-start;
   flex-wrap: wrap;
   overflow: hidden;
+  @include breakpoint(medium) {
+    height: 80vh;
+  }
 }
 
 @for $i from 0 through 9 {
-  .tile:nth-of-type(#{$i}) {
+  .show_bg:nth-of-type(#{$i}) {
     -webkit-transition-delay: calc(.1s * #{$i});
     transition-delay: calc(.1s * #{$i});
   }

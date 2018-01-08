@@ -3,18 +3,37 @@ import { Link } from 'react-router-dom';
 import Tile from "./../Components/Tile";
 
 class TilesWrapper extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.class_names = "tiles_wrapper";
+  }
+
+  componentDidMount() {
+    const img = new Image();
+    img.onload = () => {
+      this.class_names = "tiles_wrapper bg_loaded";
+      this.setState();
+    };
+    if (window.innerWidth < 1200) {
+      img.src = 'images/hubble_620.png';
+    } else {
+      img.src = 'images/hubble_1400.png'
+    }
+  }
+
   render() {
     return (
-        <section className="tiles_wrapper">
-          <Tile tileClass="spinner" title="professional interests" link="/professional" />
-          <Tile tileClass="space" />
-          <Tile tileClass="space boxed" />
-          <Tile tileClass="space" />
-          <Tile tileClass="boxed corner_color"  title="personal interests" link="/professional"  />
-          <Tile tileClass="space" />
-          <Tile tileClass="space boxed" />
-          <Tile tileClass="space" />
-          <Tile tileClass="coffee" title="contact me" link="/contact" />
+        <section className={this.class_names}>
+          <Tile title="professional interests" link="/professional" />
+          <Tile tileClass="show_bg" />
+          <Tile tileClass="show_bg" />
+          <Tile tileClass="show_bg" />
+          <Tile title="personal interests" link="/professional"  />
+          <Tile tileClass="show_bg" />
+          <Tile tileClass="show_bg" />
+          <Tile tileClass="show_bg" />
+          <Tile title="contact me" link="/contact" />
         </section>
     );
   }

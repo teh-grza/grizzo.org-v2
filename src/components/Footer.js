@@ -10,8 +10,7 @@ class Footer extends Component {
        <Link to="/">Home</Link>
        <Link to="/professional">Professional</Link>
        <Link to="/personal">Personal</Link>
-
-       <GridOverlay />
+       <Link to="/contact">Contact</Link>
        <ColorSwitch />
      </nav>
   </footer>

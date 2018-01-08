@@ -43,11 +43,11 @@ a {
   @include breakpoint (small_down) {
     padding: 100px 0 70px;
   }
-  @include breakpoint (under_min_px_height) {
-    padding: 100px 0 70px;
+  @include breakpoint (medium_down_short_px) {
+    padding: 108px 0 70px;
   }
-  @include breakpoint(under_min_height) {
-    padding: 7.5rem 0 0;
+  @include breakpoint (medium_up_short_px) {
+    padding: 70px 0 70px;
   }
 }
 
@@ -72,13 +72,8 @@ a {
   text-align: center;
   padding: 1.1em 0 1em;
   background-color: rgba(255,255,255,.08);
-
-  @include breakpoint(large) {
-    width: $col_size*5 + $gutter*5;
-  }
-  @include breakpoint(larger) {
-    width: $col_size*5 + $gutter*4;
-  }
+  width: 96%;
+  margin: 0 auto;
   a {
     display: inline-block;
   }

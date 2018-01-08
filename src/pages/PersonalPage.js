@@ -1,7 +1,10 @@
-import React, { Component } from "react";
-import PageHeader from "./../components/PageHeader";
-import IconBandcamp from "./../svg/IconBandcamp";
-import IconYoutube from "./../svg/IconYoutube";
+import React, { Component } from "react"
+import PageHeader from "./../components/PageHeader"
+import IconBandcamp from "./../svg/IconBandcamp"
+import IconYoutube from "./../svg/IconYoutube"
+import IconGithub from "./../svg/IconGithub"
+import IconTwitter from "./../svg/IconTwitter"
+import IconLinkedin from "./../svg/IconLinkedin"
 
 class PersonalPage extends Component {
   render() {
@@ -10,7 +13,7 @@ class PersonalPage extends Component {
         <PageHeader title="Personal Interests" subtitle="Quality Not Guaranteed" />
         <h4>Music Production</h4>
         <section className="text_wrapper music-production">
-          <p>If I had to pick a genre for my music, I'd choose "bonkers" and "not very good".  Currently I'm working on reeling in my experimental stuff in order to create an RPG game soundtrack.</p>
+          <p>If I had to pick a genre for my music, I'd choose "bonkers". I'm currently at work on ambient game soundtracks, which is... a change.</p>
 
           <section className="icon-links">
             <IconBandcamp />
@@ -38,6 +41,12 @@ class PersonalPage extends Component {
           <br />
         </section>
 
+
+        <section className="icon-links">
+          <IconLinkedin />
+          <IconGithub />
+          <IconTwitter />
+        </section>
 
       </div>
     )

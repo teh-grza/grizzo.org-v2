@@ -1,14 +1,14 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 
 const Header = ({ children }) => (
   <header>
-    <h1><a href="/" title="My name is actually Mark. Grizzo is a nickname from high school that has stuck with me">grizzo industries</a></h1>
+    <h1><Link title="My name is actually Mark. Grizzo is a nickname from high school that has stuck with me" to="/">grizzo industries</Link></h1>
     <nav>
-      <Link to="/">Home</Link>
-      <Link to="/professional">Professional</Link>
-      <Link to="/personal">Personal</Link>
-      <Link to="/contact">Contact</Link>
+      <NavLink to="/" exact>Home</NavLink>
+      <NavLink to="/professional">Professional</NavLink>
+      <NavLink to="/personal">Personal</NavLink>
+      <NavLink to="/contact">Contact</NavLink>
     </nav>
   </header>
 )

@@ -51,6 +51,13 @@ $autumn-pink: rgb(165, 85, 48);
   &.cw-light, .cw-light &  { color: black; }
 }
 
+%cw_nav_active {
+  transition: color 320ms;
+  color: $off-white;
+  &.cw-blazers, .cw-blazers & { color: $off-white; }
+  &.cw-light, .cw-light &  { color: black; text-decoration: underline; }
+}
+
 %cw_logo_color {
     transition: all 320ms;
     color: $off-white;
@@ -65,21 +72,6 @@ $autumn-pink: rgb(165, 85, 48);
   .cw-light &  { color: $winter-green; }
 }
 
-%cw_text_link_outline {
-  text-decoration: none;
-  color: white;
-    text-shadow: 1px 1px 1px #000,
-                -1px -1px 1px #000,
-                -1px 1px 1px #000,
-                1px -1px 1px #000;
-  .cw-blazers & {
-    text-shadow: 1px 1px 1px $blazers-red,
-                -1px -1px 1px $blazers-red,
-                -1px 1px 1px $blazers-red,
-                1px -1px 1px $blazers-red;
-  }
-}
-
 %cw_tile_box {
   border: 1.90vw solid $winter-alphablue;
   .cw-blazers & { border-color: $blazers-red; }
@@ -87,7 +79,7 @@ $autumn-pink: rgb(165, 85, 48);
 }
 
 %cw_thick_lower_border {
-  border-bottom: $gutter/3 solid $winter-icyblue;
+  border-bottom: $gutter/3 solid $winter-burgundy;
   .cw-blazers & { border-color: $blazers-red; }
   .cw-light &  { border-color: $winter-green; }
 }
@@ -98,13 +90,14 @@ $autumn-pink: rgb(165, 85, 48);
   .cw-light & { border-color: $winter-green; }
 }
 
+.contact-icons a:hover svg,
 a:hover svg {
-  fill: white;
+  fill: $winter-burgundy;
   .cw-blazers & { fill: $blazers-red; }
   .cw-light & { fill: $winter-green; }
 }
 
-%cw_stripe_color_two {
+%cw_stripe_colors {
   &:before {
     background-image:
     linear-gradient(
@@ -150,21 +143,13 @@ a:hover svg {
   }
 }
 
-%cw_tile_hover {
-  color: white;
-  text-shadow:
-   -1px -1px 0 #000,
-    1px -1px 0 #000,
-    -1px 1px 0 #000,
-     1px 1px 0 #000;
-}
 
-%cw_text_outline {
+%cw_site_name_hover {
   text-shadow:
-   -1px -1px 0 black,
-    1px -1px 0 black,
-    -1px 1px 0 black,
-     1px 1px 0 black;
+   -1px -1px 0 $winter-icyblue,
+    1px -1px 0 $winter-icyblue,
+    -1px 1px 0 $winter-icyblue,
+     1px 1px 0 $winter-icyblue;
   .cw-blazers & {
     color: white;
      text-shadow:
@@ -173,8 +158,34 @@ a:hover svg {
      -1px 1px 0 $blazers-red,
       1px 1px 0 $blazers-red;
   }
+  .cw-light & {
+    color: $winter-green;
+    text-shadow:
+   -1px -1px 0 white,
+    1px -1px 0 white,
+    -1px 1px 0 white,
+     1px 1px 0 white;
+  }
+}
+
+%cw_text_outline {
+  text-decoration: none;
+  color: $off-white;
+  text-shadow:
+  -1px -1px 0 $winter-alphablue,
+   1px -1px 0 $winter-alphablue,
+   -1px 1px 0 $winter-alphablue,
+    1px 1px 0 $winter-alphablue;
+  .cw-blazers & {
+    color: $off-white;
+     text-shadow:
+    -1px -1px 0 $blazers-red,
+     1px -1px 0 $blazers-red,
+     -1px 1px 0 $blazers-red,
+      1px 1px 0 $blazers-red;
+  }
    .cw-light & {
-     color: black;
+     color: $winter-green;
      text-shadow:
     -1px -1px 0 white,
      1px -1px 0 white,

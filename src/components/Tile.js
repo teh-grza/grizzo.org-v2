@@ -11,12 +11,11 @@ class Tile extends React.Component {
     } else {
       this.classNames="tile";
     }
-
   }
   render() {
     if (this.props.link) {
       return (
-        <Link className={this.classNames} to={this.props.link}>{this.props.title}</Link>
+        <Link className={this.classNames} to={this.props.link}><span>{this.props.title}</span></Link>
       );
     } else {
       return (

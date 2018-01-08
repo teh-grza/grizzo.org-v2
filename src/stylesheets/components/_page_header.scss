@@ -35,9 +35,6 @@
     padding: 0 $col_size + $gutter;
   }
 
-  @include breakpoint(under_min_height) {
-    max-height: 33vh;
-  }
   h2, h3 {
     margin: 0;
   }

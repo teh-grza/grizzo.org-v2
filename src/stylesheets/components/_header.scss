@@ -15,9 +15,39 @@ header {
   justify-content: space-between;
   z-index: 1;
 
-  a:hover {
-    @extend %cw_text_link_outline;
+  nav {
+    margin-top: .74em;
+    margin-right: -.7em;
+
+    @include breakpoint(small_down) {
+      position: absolute;
+      left: 0;
+      top: 3.3em;
+      margin: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+    }
+    @include breakpoint (medium_down) {
+      a:first-child {
+        display: none;
+      }
+    }
+
+    a {
+      @extend %nav-item;
+      &:hover {
+         @extend %cw_text_outline;
+      }
+      &.active {
+        @extend %cw_nav_active;
+      }
+      @include breakpoint(small_down) {
+         padding: .7em 2%;
+      }
+    }
   }
+
   h1 {
     @include breakpoint(small_down) {
       position: absolute;
@@ -26,34 +56,11 @@ header {
     }
     a {
       @extend %cw_logo_color;
+      &:hover {
+        text-decoration: none;
+        @extend %cw_site_name_hover;
+      }
     }
   }
 
-}
-
-header nav {
-  margin-top: .74em;
-  margin-right: -.7em;
-
-  @include breakpoint(small_down) {
-    position: absolute;
-    left: 0;
-    top: 3.3em;
-    margin: 0;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-  }
-  @include breakpoint (medium_down) {
-    a:first-child {
-      display: none;
-    }
-  }
-
-  a {
-    @extend %nav-item;
-    @include breakpoint(small_down) {
-      padding: .7em 2%;
-    }
-  }
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 
 const IconBandcamp = () => (
-  <a href="https://github.com/teh-grza" className="icon-bandcamp" title="Bandcamp">
+  <a href="https://grizzo.bandcamp.com/" className="icon-bandcamp" title="Bandcamp">
   <svg width="1995" height="330" viewBox="0 0 1995 330" >
   <path
   id="diamond"
