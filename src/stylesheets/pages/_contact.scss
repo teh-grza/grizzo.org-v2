@@ -2,7 +2,10 @@
 
   .page-header {
     background-image: url(/images/umbrella.png);
-    background-size: 13%;
+    background-size: 20%;
+    @include breakpoint(small) {
+      background-size: 200px;
+    }
   }
   .contact-icons {
     background: rgba(255,255,255,.2);

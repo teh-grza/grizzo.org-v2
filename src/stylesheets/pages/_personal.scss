@@ -2,7 +2,10 @@
 
   .page-header {
     background-image: url(/images/kitty.png);
-    background-size: 11%;
+    background-size: 23%;
+    @include breakpoint(large) {
+      background-size: 180px;
+    }
   }
   .music-production .icon-links {
       margin: 0 auto;

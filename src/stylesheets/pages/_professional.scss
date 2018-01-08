@@ -2,7 +2,10 @@
 
   .page-header {
     background-image: url(/images/cane.png);
-    background-size: 13%;
+    background-size: 20%;
+    @include breakpoint(large) {
+      background-size: 180px;
+    }
   }
 
   .full-stack {
