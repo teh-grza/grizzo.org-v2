@@ -10,5 +10,3 @@ ReactDOM.render(
   </BrowserRouter>,
   document.getElementById("app")
 );
-
-registerServiceWorker();
