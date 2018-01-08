@@ -3,7 +3,7 @@ import { Link, NavLink } from 'react-router-dom'
 
 const Header = ({ children }) => (
   <header>
-    <h1><Link title="My name is actually Mark. Grizzo is a nickname from high school that has stuck with me" to="/">grizzo industries</Link></h1>
+    <h1><Link title="My name is actually Mark Hoffmann. Grizzo is a nickname from high school that has stuck with me" to="/">grizzo industries</Link></h1>
     <nav>
       <NavLink to="/" exact>Home</NavLink>
       <NavLink to="/professional">Professional</NavLink>

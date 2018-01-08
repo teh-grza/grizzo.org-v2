@@ -11,7 +11,7 @@ class ContactPage extends Component {
   render() {
     return (
       <div className="page contact_page">
-        <PageHeader title="Contact Me" />
+        <PageHeader title="Contact Me" subtitle="My name is Mark" />
         <h4>Please fire me an <a href="mailto:grizzo@gmail.com">email</a> or hit up one of my medias social:</h4>
         <section className="text_wrapper music-production">
           <p></p>
