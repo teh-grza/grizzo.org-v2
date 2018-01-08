@@ -35,6 +35,29 @@ $autumn-yellow: rgb(165, 85, 48);
 $autumn-cream: rgb(165, 85, 48);
 $autumn-pink: rgb(165, 85, 48);
 
+body:before {
+  content: "";
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  opacity: 0;  background-image:
+    linear-gradient(
+      354deg,
+      transparent,
+      transparent 35%,
+      white 35%,
+      white 51%,
+      $blazers-red 51%,
+      $blazers-red 67%,
+      transparent 67%
+    );
+}
+
+.cw-blazers:before {
+  transition: opacity 3000ms;
+  opacity: .25;
+}
 
 %cw_bgcolor_main {
   background-color: black;
@@ -74,7 +97,7 @@ $autumn-pink: rgb(165, 85, 48);
 
 %cw_tile_box {
   border: 1.90vw solid $winter-alphablue;
-  .cw-blazers & { border-color: $blazers-red; }
+  .cw-blazers & { border-color: $blazers-red; background-color: #010101; }
   .cw-light & { border-color: $winter-green; }
 }
 
