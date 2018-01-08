@@ -55,7 +55,7 @@ class ProfessionalPage extends Component {
             <dd>Shift focus to Vue.js and React</dd>
           </dl>
 
-          <p>Technologies/tools I've used professionally: HTML, CSS, JS, PHP, Ruby, ASP, ASP.net, SQL, jQuery, Vue, Visual Basic, XML, JSON, WordPress, CakePHP, Ruby on Rails, Slim, Capistrano, Jenkins, Visual Studio, Dreamweaver, Sublime Text, Atom, Flash, Photoshop, Word, Excel, PowerPoint, Google Suite, Redmine, Jira, Github, Bitbucket</p>
+          <p>Technologies/tools I've used professionally: HTML, CSS, JS, PHP, Ruby, ASP, ASP.net, SQL, jQuery, Vue, Visual Basic, XML, JSON, WordPress, CakePHP, Ruby on Rails, Slim, Capistrano, Jenkins, Visual Studio, Dreamweaver, Sublime Text, Atom, Flash, Photoshop, Word, Excel, PowerPoint, Google Suite, Redmine, Jira, Github, Bitbucket.</p>
 
           <p>So I've been a web dev for a long time and have worn many hats.  These days, I'm most excited about Progressive Web Apps, VR/AR, and React.</p>
 
