@@ -34,7 +34,7 @@ class TilesWrapper extends React.Component {
           <Tile tileClass="show_bg" />
           <Tile tileClass="show_bg" />
           <Tile tileClass="show_bg" />
-          <Tile title="personal interests" link="/professional"  />
+          <Tile title="personal interests" link="/personal"  />
           <Tile tileClass="show_bg" />
           <Tile tileClass="show_bg" />
           <Tile tileClass="show_bg" />
