@@ -12,7 +12,7 @@ class ContactPage extends Component {
     return (
       <div className="page contact_page">
         <PageHeader title="Contact Me" />
-        <h4>There are many ways of making me talk</h4>
+        <h4>Please fire me an <a href="mailto:grizzo@gmail.com">email</a> or hit up one of my medias social:</h4>
         <section className="text_wrapper music-production">
           <p></p>
           <div className="contact-icons">
