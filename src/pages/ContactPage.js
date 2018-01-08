@@ -18,17 +18,17 @@ class ContactPage extends Component {
           <div className="contact-icons">
             <dl>
               <dt><IconGithub /></dt>
-              <dd>Github's where I'm putting my code these days. Unfortunately most of my work pre-2018 is in private client repos</dd>
+              <dd>Github's where I'm putting my code these days. Unfortunately most of my work pre-2018 is in private client repos.</dd>
               <dt><IconTwitter /></dt>
-              <dd>I tweet occasionally about code and frequently about heart-warming animal stories</dd>
+              <dd>I tweet occasionally about code and frequently about heart-warming animal stories.</dd>
               <dt><IconLinkedin /></dt>
-              <dd>Through it all, LinkedIn was there</dd>
+              <dd>Through it all, LinkedIn was there.</dd>
               <dt><IconBandcamp /></dt>
-              <dd>Bandcamp is where I put unpleasant music</dd>
+              <dd>Bandcamp is where I put unpleasant music.</dd>
               <dt><IconYoutube /></dt>
-              <dd>Youtube is where I put Blazers highlights videos</dd>
+              <dd>Youtube is where I put Blazers highlights videos.</dd>
               <dt><IconTumblr /></dt>
-              <dd>And my Tumblr blog is a real snoozer</dd>
+              <dd>And my Tumblr blog is a real snoozer.</dd>
             </dl>
           </div>
         </section>

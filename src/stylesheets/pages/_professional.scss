@@ -13,8 +13,10 @@
       width: 47vw;
     }
     dd {
+      max-width: 68%;
       @include breakpoint(large) {
         width: $col_size*4 + $gutter*3;
+
       }
     }
   }
