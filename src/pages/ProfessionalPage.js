@@ -19,7 +19,7 @@ class ProfessionalPage extends Component {
 
           <p>From 2011 until 2017 I managed a team of ~10 developers (20% of the company workforce) at <a href="http://www.wearefine.com/">FINE</a> while holding the company's most senior technical position. As manager of a team of developers my goal is to act as mentor, advocate and visionary for my team while supporting other managers and ensuring strong technical communication company-wide.  I consider myself an excellent teacher and I enjoy helping others reach their goals as much as I enjoy reaching my own.</p>
 
-          <p>When hiring, my goal is to assemble a team of extremely clever people with diverse backgrounds and experiences.  I prize communication, teamwork and other soft skills in addition to top-knotch coding ability in potential hires.  I absolutely avoid cultural toxicity, striving for inclusion, efficiency, and honesty instead.</p>
+          <p>When hiring, my goal is to assemble a team of extremely clever people with diverse backgrounds and experiences.  I prize communication, teamwork and other soft skills in addition to top-notch coding ability in potential hires.  I absolutely avoid cultural toxicity, striving for inclusion, efficiency, and honesty instead.</p>
 
           <p>And not that anybody likes delivering bad news, but if somebody's got to do it, it should be me.  I can handle difficult conversations and defuse tense moments using charisma, logic or both.</p>
 
