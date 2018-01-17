@@ -1,17 +1,42 @@
 .tiles_wrapper {
   width: 100%;
   min-width: 100%;
-  height: calc(94vh - 160px);
-  min-height: 400px;
   display: flex;
-  align-items: stretch;
-  align-content: stretch;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-  overflow: hidden;
+  @extend %cw_bgcolor_main;
+
+  @include breakpoint(small_down) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    overflow: hidden;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column;
+    background-image: url(/images/hubble_620.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+  }
+  @include breakpoint(medium_down_short_px) {
+    padding-top: 15vh;
+    height: 90vh;
+  }
+  @include breakpoint(under_min_height) {
+    display: none;
+  }
   @include breakpoint(medium) {
     height: 80vh;
+    min-height: 400px;
+    align-items: stretch;
+    align-content: stretch;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    overflow: hidden;
   }
+
 }
 
 @for $i from 0 through 9 {

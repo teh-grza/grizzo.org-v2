@@ -13,10 +13,8 @@ class TilesWrapper extends React.Component {
   }
 
   componentDidMount() {
-    console.log("Tiles Mounted");
     const img = new Image();
     img.onload = () => {
-      console.log("Image Loaded");
       this.class_names = "tiles_wrapper bg_loaded";
       this.setState({image_loaded: 1});
     };

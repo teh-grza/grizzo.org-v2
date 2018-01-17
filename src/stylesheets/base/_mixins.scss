@@ -20,9 +20,8 @@
   @if $point == medium_up_short_px {
     @media (max-height: 600px) and (min-width: 900px) { @content ;}
   }
-
   @if $point == under_min_height {
-    @media (max-height: 75vw) and (max-width: 900px) { @content ;}
+    @media (max-height: 75vw) and (max-width: 899px) { @content ;}
   }
   @if $point == under_good_height {
     @media (max-height: 90vw) { @content ;}
@@ -40,7 +39,7 @@
     @media (min-width: 500px)  { @content ; }
   }
   @if $point == medium_down {
-    @media (max-width: 900px)  { @content ; }
+    @media (max-width: 899px)  { @content ; }
   }
   @else if $point == large {
     @media (min-width: 900px)  { @content ; }

@@ -12,12 +12,14 @@ import NotFoundPage from "./pages/NotFoundPage";
 const App = ({ location }) => {
   const currentKey = location.pathname.split('/')[1] || '/'
   const timeout = { enter: 600, exit: 600, appear: 600 }
+  const iOS = /(iPad|iPhone|iPod)/g.test(navigator.userAgent);
+  const sectionClass = iOS ? "page-wrapper" : "page-wrapper hovers";
 
   return (
   	<Layout>
       <TransitionGroup component="main" className="page-main">
         <CSSTransition key={currentKey} timeout={timeout} classNames="fade" appear={true} mountOnEnter>
-          <section className="page-wrapper">
+          <section className={sectionClass}>
             <Switch location={location}>
               <Route path="/" exact={true} component={HomePage} />
               <Route path="/professional" component={ProfessionalPage} />

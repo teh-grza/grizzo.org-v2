@@ -57,70 +57,90 @@
 
 a.tile {
   @extend %cw_tile_box;
+
+  @include breakpoint(small_down) {
+    height: 13vh;
+    border: none;
+    background: rgba(0,0,0,.7)!important;
+  }
+
   /* fancy hovers */
-  & span {
-    display: block;
+  @include breakpoint(medium) {
+    & span {
+      display: block;
+    }
+    &:before, &:after {
+      content:"";
+      width: 0;
+      height: 2px;
+      position: absolute;
+      transition: all 0.2s linear;
+      background: #fff;
+    }
+    & span:before, & span:after {
+      content:"";
+      width: 2px;
+      height:0;
+      position: absolute;
+      transition: all 0.2s linear;
+      background: rgba(255,255,255,.9);
+    }
+    .hovers &:hover:before, .hovers &:hover:after {
+      width: 100%;
+    }
+    .hovers &:hover span:before, .hovers &:hover span:after {
+      height: 100%;
+    }
+    &:before {
+      left: 50%;
+      top: 0;
+      transition-duration: 0.4s;
+    }
+    &:after {
+      left: 50%;
+      bottom: 0;
+      transition-duration: 0.4s;
+    }
+    & span::before{
+      left: 0;
+      top: 50%;
+      transition-duration: 0.4s;
+    }
+    & span::after{
+      right: 0;
+      top: 50%;
+      transition-duration: 0.4s;
+    }
+    .hovers &:hover:before, .hovers &:hover:after{
+      left: 0;
+    }
+    .hovers &:hover span::before, .hovers &:hover span::after{
+      top: 0;
+    }
   }
-  &:before, &:after {
-    content:"";
-    width: 0;
-    height: 2px;
-    position: absolute;
-    transition: all 0.2s linear;
-    background: #fff;
-  }
-  & span:before, & span:after {
-    content:"";
-    width: 2px;
-    height:0;
-    position: absolute;
-    transition: all 0.2s linear;
-    background: rgba(255,255,255,.9);
-  }
-  &:hover:before, &:hover:after {
-    width: 100%;
-  }
-  &:hover span:before, &:hover span:after {
-    height: 100%;
-  }
-  &:before {
-    left: 50%;
-    top: 0;
-    transition-duration: 0.4s;
-  }
-  &:after {
-    left: 50%;
-    bottom: 0;
-    transition-duration: 0.4s;
-  }
-  & span::before{
-    left: 0;
-    top: 50%;
-    transition-duration: 0.4s;
-  }
-  & span::after{
-    right: 0;
-    top: 50%;
-    transition-duration: 0.4s;
-  }
-  &:hover:before, &:hover:after{
-    left: 0;
-  }
-  &:hover span::before, &:hover span::after{
-    top: 0;
-  }
+
 }
 
 .tile.show_bg {
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
-  background-attachment: fixed;
-  opacity: .9;
+
   @extend %cw_bgcolor_main;
-  background-image: url(/images/hubble_lowres.png);
+
+  @include breakpoint(small_down) {
+    background: rgba(0,0,0,.01)!important;
+  }
+
+  @include breakpoint(medium) {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    opacity: .9;
+    background-image: url(/images/hubble_lowres.png);
+  }
   .bg_loaded & {
-    background-image: url(/images/hubble_620.png);
+    @include breakpoint(medium) {
+      background-image: url(/images/hubble_620.png);
+    }
     @include breakpoint(larger) {
       background-image: url(/images/hubble_1400.png);
     }

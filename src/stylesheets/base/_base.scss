@@ -28,6 +28,7 @@ a {
   @extend %cw_link_color;
   text-decoration: none;
   &:hover {
+    cursor: pointer;
     text-decoration: underline;
   }
 }
@@ -37,17 +38,18 @@ a {
   top: 0;
   display: flex;
   flex-flow: column;
-  align-content: stretch;
   width: 100%;
-  padding: 10vh 0;
   @include breakpoint (small_down) {
     padding: 100px 0 70px;
   }
+  @include breakpoint (small) {
+    padding: 10vh 0;
+  }
   @include breakpoint (medium_down_short_px) {
-    padding: 108px 0 70px;
+    padding: 70px 0 70px;
   }
   @include breakpoint (medium_up_short_px) {
-    padding: 70px 0 70px;
+    padding: 92px 0 70px;
   }
 }
 
