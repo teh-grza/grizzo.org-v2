@@ -39,14 +39,11 @@ a {
   display: flex;
   flex-flow: column;
   width: 100%;
-  @include breakpoint (small_down) {
+  @include breakpoint(small_down) {
     padding: 100px 0 70px;
   }
   @include breakpoint (small) {
     padding: 10vh 0;
-  }
-  @include breakpoint (medium_down_short_px) {
-    padding: 70px 0 70px;
   }
   @include breakpoint (medium_up_short_px) {
     padding: 92px 0 70px;

@@ -6,7 +6,7 @@
 //============================================================================
 //============================================================================
 /*:
- * @plugindesc v0.1 Adds some basic Blackjack logic
+ * @plugindesc v0.4 Adds a basic Blackjack screen
  * @author Grizzo
  * @version 0.1
  *
@@ -61,7 +61,19 @@
  *
  *
  *
- *@help Aces high y'all!  Plugin Command: Blackjack
+ * @param ---Images---
+ * @default
+ *
+ *
+ * @param Enable Images
+ * @desc Set to true to show faces for the player and dealer
+ * Default: true
+ * @default true
+ *
+
+ *
+ *
+ *@help Plugin Command: Blackjack
  *
  *
  *
@@ -84,7 +96,10 @@
   betVal[0] = 100;
   betVal[1] = 500;
   betVal[2] = 1500;
+  var enable_images = parameters['Enable Images'] || true;
+  var graphic_name = 'CardPlayerFaces'
   var player_score, dealer_score = 0;
+  var debugging = 0;
 
   var Blackjack_Interpreter_pluginCommand = Game_Interpreter.prototype.pluginCommand;
   Game_Interpreter.prototype.pluginCommand = function (command, args) {
@@ -175,6 +190,7 @@
     this._dealerWindow.x = Graphics.width - this._dealerWindow.width;
     this._dealerWindow.parent_scene = this;
     this.addWindow(this._dealerWindow);
+    this._dealerWindow.drawExpression();
 
     this._playerWindow = new Window_Blackjack_Player();
     this._playerWindow.parent_scene = this;
@@ -197,16 +213,19 @@
     this.addWindow(this._playCommandWindow);
 
     this._gold_window = new Window_Gold(0,0);
-    this._gold_window.x = Graphics.width - this._gold_window.width;
+    this._gold_window.y = Graphics.height - 165;
     this.addWindow(this._gold_window);
 
-    this._outcome_window = new Window_Outcome(this._gold_window.x,Graphics.height / 2 - 46,this._gold_window.width);
+    this._outcome_window = new Window_Outcome(Graphics.width - this._gold_window.width,Graphics.height / 2 - 70, this._gold_window.width);
     this.addWindow(this._outcome_window);
 
+    this.game_count = 0;
 
   }
 
+
   Scene_Blackjack.prototype.resetAllVars = function () {
+
     this.bet = this._commandWindow._bet;
     this.hasInsurance = false;
     this._outcome_window.visible = false;
@@ -219,7 +238,8 @@
   }
 
   Scene_Blackjack.prototype.dealCommand = function () {
-    console.log("dealing");
+    this.game_count++;
+
     this.resetAllVars();
     this.game_in_progress = true;
     $gameParty.gainGold(-(this.bet));
@@ -227,7 +247,14 @@
     this._commandWindow.deactivate();
     this._commandWindow.close();
     // player draw card 1
-    this._playerWindow.takeCard(this.deck.shift());
+    if (this.game_count > 0) {
+      this._playerWindow.takeCard(this.deck.shift());
+    } else {
+      var drawarama = new card("Test", 1, "Test", 10);
+      this._playerWindow.takeCard(drawarama);
+      this.deck.shift();
+    }
+
     // dealer draw card 1
     this._dealerWindow.takeCard(this.deck.shift());
     if (this._dealerWindow.hand[0].value == 11) {
@@ -235,7 +262,14 @@
       this._playCommandWindow.insuranceAllow = true;
     }
     // player draw card 2
-    this._playerWindow.takeCard(this.deck.shift());
+    if (this.game_count > 0) {
+      this._playerWindow.takeCard(this.deck.shift());
+    } else {
+      var drawarama = new card("Test", 1, "Test", 10);
+      this._playerWindow.takeCard(drawarama);
+      this.deck.shift();
+    }
+
     if (this._playerWindow.handValue == 21) {
       this._playerWindow.blackjack = 1;
     }
@@ -254,11 +288,14 @@
       this._dealerWindow.blackjack = 1;
     }
     this._dealerWindow.refresh();
+
     if (this._playerWindow.blackjack == 1) {
       this.checkEndgame();
-    } else if (this._playCommandWindow.insuranceAllow == false && this._dealerWindow.blackjack){
+    } else if (this._playCommandWindow.insuranceAllow == false && this._dealerWindow.blackjack) {
       this.checkEndgame();
     } else {
+      this._playerWindow.logVars();
+      this._dealerWindow.logVars();
       this._playCommandWindow.select(0);
       this._playCommandWindow.activate();
     	this._playCommandWindow.open();
@@ -333,6 +370,8 @@
     }
 
     if (this._playerWindow.bust == false && this._playerWindow.stay == false) {
+      this._playerWindow.logVars();
+      this._dealerWindow.logVars();
       this._playCommandWindow.refresh();
       this._playCommandWindow.select(0);
       this._playCommandWindow.activate();
@@ -346,6 +385,8 @@
   }
 
   Scene_Blackjack.prototype.checkEndgame = function () {
+    this._playerWindow.logVars();
+    this._dealerWindow.logVars();
     if (this._playerWindow.splitHands == true) {
       this._playerWindow.splitValue = this._playerWindow.handValue;
       var split_hand = this._playerWindow.hands.pop();
@@ -369,7 +410,6 @@
         this._dealerWindow.handValue -= 10;
       }
       if (this._dealerWindow.handValue < 17 && this._playerWindow.bust == false && this._playerWindow.blackjack == false) {
-        console.log("dealer needs to draw");
         while (this._dealerWindow.handValue < 17) {
           this._dealerWindow.takeCard(this.deck.shift());
           if (this._dealerWindow.handValue > 21) {
@@ -413,9 +453,11 @@
           $gameParty.gainGold(this.bet * 2.5);
           this._gold_window.refresh();
         } else {
+          this._playerWindow.expression_index = 0;
           this._outcome_window.text = "You win! +"+(this.bet * 2);
           $gameParty.gainGold(this.bet * 2);
           this._gold_window.refresh();
+          this._playerWindow.refresh();
         }
       }
       if ((this._playerWindow.splitValue > this._dealerWindow.handValue) || (this._dealerWindow.bust == true && this._playerWindow.splitValue > 0)) {
@@ -476,13 +518,25 @@
   Window_Blackjack_Dealer.prototype.initialize = function() {
     var width = Graphics.width;
   	var height = 225;
+    this.face_index = 4;
   	Window_Base.prototype.initialize.call(this, 0, 0, width, height);
     this.resetVars();
   };
 
   Window_Blackjack_Dealer.prototype.draw = function() {
     this.contents.clear();
-    this.drawText("Dealer Cards", 0, 0, this.width, 'center');
+    this.drawExpression();
+  };
+
+  Window_Blackjack_Dealer.prototype.drawExpression = function() {
+    if (enable_images) {
+      var face_image = this._graphicBitmap = ImageManager.loadFace(graphic_name);
+      face_image.addLoadListener(function() {
+        this.drawFace(graphic_name, this.face_index, 0, 50);
+      }.bind(this));
+    } else {
+      this.drawText("Dealer Cards", 0, 0, this.width, 'center');
+    }
   };
 
   Window_Blackjack_Dealer.prototype.takeCard = function(card) {
@@ -519,10 +573,22 @@
     this.ace_count = 0;
   };
 
+  Window_Blackjack_Dealer.prototype.logVars = function () {
+    if (debugging) {
+      console.log("dealer hand: "+this.hand);
+      console.log("dealer handValue: "+this.handValue);
+      console.log("dealer blackjack: "+this.blackjack);
+      console.log("dealer bust: "+this.bust);
+      console.log("dealer gamePhase: "+this.gamePhase);
+      console.log("dealer showing_ace: "+this.showing_ace);
+      console.log("dealer ace_count: "+this.ace_count);
+    }
+  }
+
   Window_Blackjack_Dealer.prototype.refresh = function() {
   	this.contents.clear();
     this.showCards(this.hand);
-  	this.drawText("Dealer cards", 0, 0, this.width, 'center');
+    this.drawExpression();
   };
 
   Window_Blackjack_Dealer.prototype.showCards = function(hand) {
@@ -542,8 +608,9 @@
       var tempVal = this.handValue;
       if (this.gamePhase == 0 && hand.length > 1 && this.blackjack == 0) {
         tempVal -= hand[1].value;
+        tempVal = String(tempVal) + "+";
       }
-      this.drawText(tempVal , 8, 0, 100);
+      this.drawText(tempVal, 8, 0, 100);
       this.resetFontSettings();
       if (this.showing_ace == 1 && this.gamePhase == 0) {
         this.changeTextColor( this.textColor(14) );
@@ -581,6 +648,19 @@
   	var height = 225;
   	Window_Base.prototype.initialize.call(this, 0, Graphics.height - height - 92, width, height);
     this.resetVars();
+    this.expression_index = 0;
+    this.drawExpression();
+  };
+
+  Window_Blackjack_Player.prototype.drawExpression = function() {
+    if (enable_images) {
+      var face_image = this._graphicBitmap = ImageManager.loadFace(graphic_name);
+      face_image.addLoadListener(function() {
+        this.drawFace(graphic_name, this.expression_index, this.width - (150 + this.padding), 50);
+      }.bind(this));
+    } else {
+    	this.drawText("Your cards", 0, 0, this.width, 'center');
+    }
   };
 
   Window_Blackjack_Player.prototype.resetVars = function() {
@@ -598,7 +678,24 @@
     this.bonus = 0;
   };
 
+  Window_Blackjack_Player.prototype.logVars = function () {
+    if (debugging) {
+      console.log("player hands: "+this.hands);
+      console.log("player handCount: "+this.handCount);
+      console.log("player handValue: "+this.handValue);
+      console.log("player blackjack: "+this.blackjack);
+      console.log("player bust: "+this.bust);
+      console.log("player stay: "+this.stay);
+      console.log("player splitHands: "+this.splitHands);
+      console.log("player splitValue: "+this.splitValue);
+      console.log("player split_win: "+this.split_win);
+      console.log("player ace_count: "+this.ace_count);
+      console.log("player bonus: "+this.bonus);
+    }
+  }
+
   Window_Blackjack_Player.prototype.takeCard = function(card) {
+    this.expression_index = 1;
     this.hands[0][this.hands[0].length] = card;
     this.handValue += card.value;
     if (card.value == 11) {
@@ -624,7 +721,6 @@
   Window_Blackjack_Player.prototype.refresh = function() {
   	this.contents.clear();
     this.showCards(this.hands[0]);
-  	this.drawText("Your cards", 0, 0, this.width, 'center');
 
     if (this.handValue > 0) {
       this.contents.fontSize = 40;
@@ -632,6 +728,7 @@
       this.resetFontSettings();
     }
     if (this.blackjack == true) {
+      this.expression_index = 2;
       this.changeTextColor( this.textColor(2) );
       this.drawText("BLACKJACK", 8, 24, 120);
       this.resetTextColor();
@@ -644,6 +741,7 @@
       this.drawText(string, 8, 24, 120);
       this.resetTextColor();
     } else if (this.handValue > 21) {
+      this.expression_index = 3;
       this.changeTextColor( this.textColor(10) );
       this.drawText("BUST", 8, 24, 120);
       this.resetTextColor();
@@ -653,6 +751,7 @@
       this.drawText(this.bonus, 8, 42, 120);
       this.resetTextColor();
     }
+    this.drawExpression();
   };
 
   Window_Blackjack_Player.prototype.showCards = function(hand) {
@@ -703,7 +802,7 @@
     this._dealAllow = true;
     this._adjustBetAllow = false;
     this.ddAllow = false;
-    Window_Command.prototype.initialize.call(this, x, Graphics.height - 62);
+    Window_Command.prototype.initialize.call(this, x, Graphics.height - 92);
   };
 
   Window_Blackjack_Command.prototype.makeCommandList = function () {
