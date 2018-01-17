@@ -69,7 +69,7 @@ class ProfessionalPage extends Component {
         <h4>Game Development</h4>
         <section className="text_wrapper tech-management">
           <p>I released a game in 1992 (a collaboration with my dad) and another in 2014 (an RPG in response to a dis track I received). I'm hoping to be more prolific moving forward-- hopeful enough that I formed an LLC and began working full-time on my first official release in November 2017.</p>
-          <p>Underground Software (the same name my dad and I used in 1992) does not yet have a solid web presence but I intend to produce one as soon as there's games to promote.  In the meantime, my defunct <a href="http://teh-grza.tumblr.com/">Tumblr</a> may have a new life someday. Also the <Link to="/notFound">404 page</Link> of this site features a small Blackjack-focused RPG I wrote over a few days.</p>
+          <p>Underground Software (the same name my dad and I used in 1992) does not yet have a solid web presence but I intend to produce one as soon as there are games to promote.  In the meantime, my defunct <a href="http://teh-grza.tumblr.com/">Tumblr</a> may have a new life someday. Also the <Link to="/notFound">404 page</Link> of this site features a small Blackjack-focused RPG I wrote over a few days.</p>
 
         </section>
 
