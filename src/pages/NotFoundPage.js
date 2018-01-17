@@ -8,8 +8,8 @@ class NotFoundPage extends Component {
       <div className="page">
         <PageHeader title="404" />
         <h4>If you were looking for the 404 page with a ridiculous Blackjack RPG on it, you're in the right place.  Otherwise, sorry, you're in the wrong place.</h4>
-        <section style={{background: "rgba(255,255,255,.3)", padding: "1em 0"}} className="text_wrapper tech-management">
-          <Iframe src="Blackjack/www/index.html" width="970" height="550" />
+        <section style={{background: "rgba(255,255,255,.3)", padding: "1em 0"}} className="text_wrapper not-found">
+          <Iframe src="Blackjack/www/index.html" width="100%" height="540" />
         </section>
       </div>
     )
