@@ -16,6 +16,7 @@ html {
 body {
   @extend %cw_main_font_color;
   @extend %cw_bgcolor_main;
+  @extend %cw_bgblend;
   font-family: 'Quicksand', sans-serif;
   font-size: $m-size;
   line-height: 1.6;

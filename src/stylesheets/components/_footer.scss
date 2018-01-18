@@ -15,6 +15,7 @@ footer {
   &:before {
     content: '';
     @extend %cw_bgcolor_main;
+    @extend %cw_bgblend;
     transition: background-color 360ms linear;
     position: absolute;
     bottom: 0;

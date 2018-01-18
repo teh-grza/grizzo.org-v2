@@ -64,8 +64,14 @@ body:before {
   background-color: black;
   background-blend-mode: lighten;
   &.cw-main, .cw-main & { background-color: $winter-deepblue; }
-  &.cw-blazers, .cw-blazers & { background-color: #010101; background-blend-mode: luminosity; }
-  &.cw-light, .cw-light & { background-color: #BEB8A7; background-blend-mode: normal; }
+  &.cw-blazers, .cw-blazers & { background-color: #010101; }
+  &.cw-light, .cw-light & { background-color: #BEB8A7; }
+}
+
+%cw_bgblend {
+  background-blend-mode: lighten;
+  &.cw-blazers, .cw-blazers & { background-blend-mode: luminosity; }
+  &.cw-light, .cw-light & { background-blend-mode: normal; }
 }
 
 %cw_main_font_color {

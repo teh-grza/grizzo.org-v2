@@ -2,7 +2,6 @@
   width: 100%;
   min-width: 100%;
   display: flex;
-  @extend %cw_bgcolor_main;
 
   @include breakpoint(small_down) {
     position: absolute;
