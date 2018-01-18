@@ -1,6 +1,19 @@
 
-.not-found iframe {
-  width: 960px;
-  height: 540px;
-  margin: 0 auto;
+.not-found {
+  text-align: center;
+  .rmmv-message {
+    display: none;
+  }
+  @include breakpoint(medium_down) {
+    overflow-x: scroll;
+    .rmmv-message {
+      display: block;
+    }
+  }
+
+  iframe {
+    width: 960px;
+    height: 540px;
+    margin: 0 auto;
+  }
 }
